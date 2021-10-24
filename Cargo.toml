@@ -1,0 +1,24 @@
+[package]
+authors = ["Peter Stuart <peter@peterstuart.org>"]
+edition = "2018"
+readme = "README.md"
+name = "distance-sensor-leds"
+version = "0.1.0"
+
+[dependencies]
+adc-interpolator = { git = "https://github.com/peterstuart/adc-interpolator", rev = "c644c5b" }
+cortex-m = "0.6.0"
+cortex-m-rt = "0.6.10"
+cortex-m-semihosting = "0.3.3"
+panic-halt = "0.2.0"
+stm32f3-discovery = "0.7.2"
+
+[[bin]]
+name = "distance-sensor-leds"
+test = false
+bench = false
+
+[profile.release]
+codegen-units = 1
+debug = true
+lto = true
